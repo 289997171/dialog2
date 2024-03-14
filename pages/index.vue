@@ -1,14 +1,12 @@
 <template>
   <div>
-    index
-    <div class="w-32 h-32 bg-red-500"></div>
+    <button class="px-4 py-2 border" @click="showLoginDialog">ShowDialog</button>
   </div>
 </template>
 
 <script setup lang="ts">
-
+const showLoginDialog = async ()=> {
+  const MyLogin = (await import('~/components/my/Login.vue')).default
+  await showDialog(MyLogin)
+}
 </script>
-
-<style scoped>
-
-</style>
